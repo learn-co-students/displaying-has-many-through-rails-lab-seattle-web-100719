@@ -1,0 +1,4 @@
+<% @patient.appointments.each do |appointment|%>
+    <%= I18n.l(appointment.appointment_datetime, format: :long).split.insert(3, "at").join(" ") %>
+    <%= link_to appointment.doctor.name, doctor_path(appointment.doctor) %>
+<% end %>
